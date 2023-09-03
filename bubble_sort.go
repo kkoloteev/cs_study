@@ -12,20 +12,18 @@ func main() {
 		baseSlice[i] = rand.Intn(10)
 	}
 	fmt.Println(baseSlice)
-	baseSlice = selectionSort(baseSlice)
+	baseSlice = bubbleSort(baseSlice)
 	fmt.Println(baseSlice)
 }
 
-func selectionSort(baseSlice []int) []int {
+func bubbleSort(baseSlice []int) []int {
 	n := len(baseSlice)
-	for i := 0; i < n; i++ {
-		min := i
-		for j := i + 1; j < n; j++ {
-			if baseSlice[j] < baseSlice[min] {
-				min = j
+	for i := 0; i < n-1; i++ {
+		for j := 0; j < n-1-i; j++ {
+			if baseSlice[j] > baseSlice[j+1] {
+				baseSlice[j], baseSlice[j+1] = baseSlice[j+1], baseSlice[j]
 			}
 		}
-		baseSlice[i], baseSlice[min] = baseSlice[min], baseSlice[i]
 	}
 	return baseSlice
 }
