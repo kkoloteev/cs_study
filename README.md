@@ -1,1 +1,1 @@
-Algorithms, data structures and other things from computer science
+Algorithms, data structures and other things from computer science.
